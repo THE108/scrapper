@@ -15,7 +15,7 @@ Usage of ./scrapper:
 ```
 
 There are two things this tool could be used for:
-  - Validation: just provide config file name (see example_config.yaml)
+  - Validation: just provide config file name (see `example_config.yaml`)
   
   - Info retrieval: just provide an URL to parse
   
@@ -37,9 +37,9 @@ Installation
 
  - Install `golang`
  
- See https://golang.org/doc/install
+See https://golang.org/doc/install
 
- - Install `dep` (https://github.com/golang/dep) first
+ - Install `dep` (https://github.com/golang/dep)
 
 ```
 $ brew install dep
