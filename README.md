@@ -61,7 +61,7 @@ $ dep ensure
  - Compile `scrapper`
  
 ```
-$ go build scrapper
+$ go build github.com/THE108/scrapper
 ```
 
 Licence
