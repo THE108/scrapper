@@ -3,15 +3,15 @@
     standard:
       fee: 7.77
 
-- url: http://pdp.lazada.sg/dasani-drinking-water-12-x-15l-12461060.html
-  delivery:
-    standard:
-      fee: 7.77
+#- url: http://pdp.lazada.sg/dasani-drinking-water-12-x-15l-12461060.html
+#  delivery:
+#    standard:
+#      fee: 7.77
 
-- url: http://pdp.lazada.sg/test-product-ha3-not-sample-80687994.html
-  delivery:
-    standard:
-      fee: 7.77
+#- url: http://pdp.lazada.sg/test-product-ha3-not-sample-80687994.html
+#  delivery:
+#    standard:
+#      fee: 7.77
 
 - url: http://pdp.lazada.sg/acer-xz350cu-35-ultrawide-fhd-curved-with-144hz-refresh-rate-gaming-monitor-66909057.html
   delivery:
@@ -21,10 +21,6 @@
 - url: http://pdp.lazada.sg/acer-xz350cu-3534-ultrawide-fhd-curved-with-144hz-refresh-rate-gaming-monitor-66909057.html
   delivery:
     standard:
-      fee: 7.77
-    economy:
-      fee: 7.77
-    express:
       fee: 7.77
 
 - url: http://pdp.lazada.sg/intellectual-puzzle-wooden-jigsaw-puzzle-44363830.html

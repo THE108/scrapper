@@ -12,7 +12,7 @@ import (
 )
 
 func diffDeliveryInfo(expected, obtained map[string]info.DeliveryDetails) {
-	log.Printf("expected: %v obtained: %v", expected, obtained)
+	log.Printf("expected: %+v obtained: %+v", expected, obtained)
 
 	for deliveryTypeExpected, feeExpected := range expected {
 		feeObtained, found := obtained[deliveryTypeExpected]
