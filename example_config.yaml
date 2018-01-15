@@ -28,3 +28,10 @@
     economy:
       fee: 7.88
       promo: 'Free for products shipped from overseas'
+
+- url: http://pdp.lazada.sg/simple-nylon-shoulder-messenger-briefcase-bag-business-bag-29681076.html
+  delivery:
+    economy:
+      fee: 3.99
+      promo: 'Free for min order of 20.00 from this Seller'
+

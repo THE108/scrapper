@@ -168,7 +168,7 @@ type ResultHolder interface {
 	Add(url string, pageInfo info.PageInfo)
 }
 
-func NewParser(resultHolder ResultHolder) func(*colly.Collector) {
+func NewParser(resultHolder ResultHolder, verbose bool) func(*colly.Collector) {
 	vm := goja.New()
 
 	return func(c *colly.Collector) {
@@ -186,7 +186,7 @@ func NewParser(resultHolder ResultHolder) func(*colly.Collector) {
 				return
 			}
 
-			if url != e.Request.URL.String() {
+			if url != e.Request.URL.String() && verbose {
 				log.Printf("redirect: %s -> %s", url, e.Request.URL.String())
 			}
 
