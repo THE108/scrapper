@@ -12,6 +12,8 @@ Usage of ./scrapper:
     	Config file name (yaml). Use to validate shipping info according to config.
   -url string
     	Url to parse. Use to get shipping info from PDP page.
+  -verbose
+    	Verbose mode. Use to see more data in logs.
 ```
 
 There are two things this tool could be used for:
@@ -30,6 +32,11 @@ $ ./scrapper -file config.yaml
 Info retrieval:
 ```
 $ ./scrapper -url http://test.com
+```
+
+Verbose mode:
+```
+$ ./scrapper -verbose -file config.yaml
 ```
 
 Installation
