@@ -4,11 +4,11 @@ import (
 	"flag"
 	"log"
 
-	"scrapper/config"
-	"scrapper/info"
-	"scrapper/parser"
-	"scrapper/pdp"
-	"scrapper/result"
+	"github.com/THE108/scrapper/config"
+	"github.com/THE108/scrapper/info"
+	"github.com/THE108/scrapper/parser"
+	"github.com/THE108/scrapper/pdp"
+	"github.com/THE108/scrapper/result"
 )
 
 func diffDeliveryInfo(expected, obtained map[string]float64) {
@@ -77,8 +77,8 @@ func parseSingleUrl(url string, allowedDomains []string) {
 
 func main() {
 	var url, urlListFilename string
-	flag.StringVar(&url, "url", "", "url to parse")
-	flag.StringVar(&urlListFilename, "file", "", "url list file name")
+	flag.StringVar(&url, "url", "", "Url to parse. Use to get shipping info from PDP page.")
+	flag.StringVar(&urlListFilename, "file", "", "Config file name (yaml). Use to validate shipping info according to config.")
 	flag.Parse()
 
 	allowedDomains := []string{"www.lazada.sg", "pdp.lazada.sg", "lazada.sg"}

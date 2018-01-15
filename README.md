@@ -9,9 +9,9 @@ Usage
 ./scrapper -h
 Usage of ./scrapper:
   -file string
-    	url list file name
+    	Config file name (yaml). Use to validate shipping info according to config.
   -url string
-    	url to parse
+    	Url to parse. Use to get shipping info from PDP page.
 ```
 
 There are two things this tool could be used for:

@@ -7,14 +7,15 @@ import (
 	"strconv"
 	"strings"
 
-	"scrapper/info"
+	"github.com/THE108/scrapper/conv"
+	"github.com/THE108/scrapper/info"
 
 	"github.com/dop251/goja"
 	"github.com/gocolly/colly"
-	"scrapper/conv"
 )
 
-const injectedJs = `var require = {
+const injectedJs = `var window = {};
+	var require = {
 		config: function(data) {}
 	};
 

@@ -3,7 +3,7 @@ package result
 import (
 	"sync"
 
-	"scrapper/info"
+	"github.com/THE108/scrapper/info"
 )
 
 type resultHolder struct {
