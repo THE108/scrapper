@@ -64,7 +64,7 @@ func parseIntValue(data map[string]interface{}, key string) (intVal int, err err
 	return strconv.Atoi(strVal)
 }
 
-func parseDeliveryInfoList(v interface{}) (deliveryInfo map[string]float64, err error) {
+func parseDeliveryInfoList(v interface{}) (deliveryInfo map[string]info.DeliveryDetails, err error) {
 	if v == nil {
 		err = fmt.Errorf("parsed delivery info value is nil")
 		return
@@ -76,7 +76,7 @@ func parseDeliveryInfoList(v interface{}) (deliveryInfo map[string]float64, err 
 		return
 	}
 
-	deliveryInfo = make(map[string]float64)
+	deliveryInfo = make(map[string]info.DeliveryDetails)
 	for _, infDeliveryInfoVal := range deliveryInfoList {
 		deliveryInfoMap, ok := infDeliveryInfoVal.(map[string]interface{})
 		if !ok {
@@ -87,7 +87,7 @@ func parseDeliveryInfoList(v interface{}) (deliveryInfo map[string]float64, err 
 		var dataType string
 		dataType, err = parseStringValue(deliveryInfoMap, "dataType")
 		if err != nil {
-			return
+			continue
 		}
 
 		switch dataType {
@@ -115,14 +115,18 @@ func parseDeliveryInfoList(v interface{}) (deliveryInfo map[string]float64, err 
 			return
 		}
 
-		var fee float64
-		fee, err = conv.ToMoney(feeRaw)
+		var deliveryDetails info.DeliveryDetails
+		deliveryDetails.Fee, err = conv.ToMoney(feeRaw)
 		if err != nil {
 			err = fmt.Errorf("error parse shipping fee value delivery type: %q error: %s", deliveryType, err.Error())
 			return
 		}
 
-		deliveryInfo[deliveryType] = fee
+		if promoMsg, e := parseStringValue(deliveryInfoMap, "promotion"); e == nil {
+			deliveryDetails.Promo = promoMsg
+		}
+
+		deliveryInfo[deliveryType] = deliveryDetails
 	}
 
 	return

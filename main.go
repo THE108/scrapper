@@ -11,7 +11,7 @@ import (
 	"github.com/THE108/scrapper/result"
 )
 
-func diffDeliveryInfo(expected, obtained map[string]float64) {
+func diffDeliveryInfo(expected, obtained map[string]info.DeliveryDetails) {
 	log.Printf("expected: %v obtained: %v", expected, obtained)
 
 	for deliveryTypeExpected, feeExpected := range expected {
@@ -21,9 +21,14 @@ func diffDeliveryInfo(expected, obtained map[string]float64) {
 			continue
 		}
 
-		if feeExpected != feeObtained {
-			log.Printf("shipping fee is not equal delivery type: %s expected: %.2f obtained: %.2f",
-				deliveryTypeExpected, feeExpected, feeObtained)
+		if feeExpected.Fee != feeObtained.Fee {
+			log.Printf("shipping fee is not equal. delivery type: %s expected: %.2f obtained: %.2f",
+				deliveryTypeExpected, feeExpected.Fee, feeObtained.Fee)
+		}
+
+		if feeExpected.Promo != "" && feeExpected.Promo != feeObtained.Promo {
+			log.Printf("promo message is not equal. delivery type: %s expected: %s obtained: %s",
+				deliveryTypeExpected, feeExpected.Promo, feeObtained.Promo)
 		}
 	}
 }

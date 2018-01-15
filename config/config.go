@@ -3,12 +3,14 @@ package config
 import (
 	"io/ioutil"
 
+	"github.com/THE108/scrapper/info"
+
 	"gopkg.in/yaml.v2"
 )
 
 type Item struct {
-	Url             string             `yaml:"url"`
-	DeliveryOptions map[string]float64 `yaml:"delivery"`
+	Url             string                          `yaml:"url"`
+	DeliveryOptions map[string]info.DeliveryDetails `yaml:"delivery"`
 }
 
 func ParseConfig(filename string) ([]Item, error) {
